@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160229160518) do
+ActiveRecord::Schema.define(version: 20160301101759) do
 
   create_table "org_companies", force: :cascade do |t|
     t.string   "name",             limit: 255,   null: false
@@ -41,6 +41,13 @@ ActiveRecord::Schema.define(version: 20160229160518) do
     t.integer  "typ_region_id",   limit: 4
     t.integer  "org_company_id",  limit: 4
     t.integer  "org_person_id",   limit: 4
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "org_contacts_people", force: :cascade do |t|
+    t.integer  "org_person_id",  limit: 4, null: false
+    t.integer  "org_contact_id", limit: 4, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
